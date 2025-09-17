@@ -228,7 +228,7 @@ def register_tools(mcp: FastMCP):
         """
         try:
             response = await pc_client.get(f"people/{person_id}", {
-                "include": "household,roles,memberships,background_checks"
+                "include": "household,roles,memberships,background_checks,addresses"
             })
             return response.get("data", {})
         except Exception as e:
